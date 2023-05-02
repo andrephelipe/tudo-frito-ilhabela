@@ -1,0 +1,93 @@
+Estilo do componente Carrinho
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+li div {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+li span {
+  font-size: 1.2rem;
+}
+
+li button {
+  background-color: #ccc;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #999;
+}
+
+li p {
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.excluir {
+  background-color: #ff3333;
+}
+
+.excluir:hover {
+  background-color: #ff0000;
+}
+
+button[type="button"] {
+  background-color: #0099ff;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button[type="button"]:hover {
+  background-color: #0066cc;
+}
+
+button[type="button"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
