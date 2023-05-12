@@ -8,7 +8,7 @@ const cardapio = [
   },
   {
     id: 2,
-    name: 'Lasanha',
+    name: 'Lassanha',
     image: 'https://renata.com.br/images/receitas/141/renata-imagem-receitas-lasanha-a-bolonhesa-share.jpg',
     description: 'lasanha de frango e queijo',
     price: 55.60,
