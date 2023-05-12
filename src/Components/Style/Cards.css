@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   overflow-x: hidden;
+  align-items: center;
 }
 
 .card {
@@ -52,10 +53,9 @@
 
 @media only screen and (max-width: 600px) {
   .cards-container {
-    flex-wrap: nowrap;
     justify-content: center;
   }
-  
+
   .card {
     margin-right: 0;
     margin-bottom: 20px;
