@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
+import { HiArrowNarrowLeft } from 'react-icons/hi';
 import CarrinhoContext from '../Context/CarrinhoContext';
 import './carrinho.css';
 
@@ -25,7 +26,9 @@ function Carrinho() {
   return (
     <section>
       <Link to="/">
-        Voltar
+        <p>
+          <HiArrowNarrowLeft size={ 30 } color="black" />
+        </p>
       </Link>
 
       <main>
