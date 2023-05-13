@@ -23,6 +23,16 @@ function Carrinho() {
     setTotal(newTotal);
   }, [items, quantidades]);
 
+  const numeroWhatsApp = '+5512974108554';
+  let mensagem = 'Olá, gostaria de fazer um pedido com os seguintes itens:\n\n';
+  items.forEach((item, index) => {
+    mensagem += `${item.name}${item.sabor ? ` - (${item.sabor})` : ''}
+    - ${quantidades[index]} unidade(s) - R$ ${item.price * quantidades[index]}\n`;
+  });
+  mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
+
+  const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
+
   return (
     <section>
       <Link to="/">
@@ -42,7 +52,18 @@ function Carrinho() {
                 <ul>
                   {items.map((item, index) => (
                     <li key={ index }>
-                      <div>{item.name}</div>
+                      <div>
+                        {item.name}
+                        {item.sabor && (
+                          <span>
+                            {' '}
+                            -
+                            {' '}
+                            (
+                            {item.sabor}
+                            )
+                          </span>)}
+                      </div>
                       <span>
                         R$
                         {' '}
@@ -98,13 +119,13 @@ function Carrinho() {
                   {' '}
                   {total.toFixed(2)}
                 </span>
-                <button
-                  type="button"
-                  disabled
+                <a
+                  href={ linkWhatsApp }
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Finalizar pedido
-                </button>
-
+                </a>
               </>
             )
         }
