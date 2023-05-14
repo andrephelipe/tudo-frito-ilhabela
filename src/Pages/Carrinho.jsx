@@ -33,6 +33,10 @@ function Carrinho() {
 
   const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
 
+  const finalizarPedido = () => {
+    console.log('oi');
+  };
+
   return (
     <section>
       <Link to="/">
@@ -48,88 +52,110 @@ function Carrinho() {
             ? <p>Nao ha nenhum produto no carrinho</p>
             : (
 
-              <>
-                <ul>
-                  {items.map((item, index) => (
-                    <li key={ index }>
-                      <div>
-                        {item.name}
-                        {item.sabor && (
-                          <span>
-                            {' '}
-                            -
-                            {' '}
-                            (
-                            {item.sabor}
-                            )
-                          </span>)}
-                      </div>
-                      <span>
-                        R$
-                        {' '}
-                        {item.price}
-                      </span>
+              <ul>
+                {items.map((item, index) => (
+                  <li key={ index }>
+                    <div>
+                      {item.name}
+                      {item.sabor && (
+                        <span>
+                          {' '}
+                          -
+                          {' '}
+                          (
+                          {item.sabor}
+                          )
+                        </span>)}
+                    </div>
+                    <span>
+                      R$
+                      {' '}
+                      {item.price}
+                    </span>
 
-                      <button
-                        onClick={ () => {
-                          const newQuantidades = [...quantidades];
-                          if (newQuantidades[index] > 0) {
-                            newQuantidades[index]--;
-                            setQuantidades(newQuantidades);
-                          }
-                        } }
-                      >
-                        -
-
-                      </button>
-
-                      <p>{quantidades[index]}</p>
-
-                      <button
-                        onClick={ () => {
-                          const newQuantidades = [...quantidades];
-                          newQuantidades[index]++;
+                    <button
+                      onClick={ () => {
+                        const newQuantidades = [...quantidades];
+                        if (newQuantidades[index] > 0) {
+                          newQuantidades[index]--;
                           setQuantidades(newQuantidades);
-                        } }
-                      >
-                        +
+                        }
+                      } }
+                    >
+                      -
 
-                      </button>
+                    </button>
 
-                      <span>
-                        R$
-                        {' '}
-                        { (item.price * quantidades[index]).toFixed(2) }
-                      </span>
+                    <p>{quantidades[index]}</p>
 
-                      <button
-                        className="excluir"
-                        onClick={ () => {
-                          removerItem(index);
-                        } }
-                      >
-                        Excluir
-                      </button>
+                    <button
+                      onClick={ () => {
+                        const newQuantidades = [...quantidades];
+                        newQuantidades[index]++;
+                        setQuantidades(newQuantidades);
+                      } }
+                    >
+                      +
 
-                    </li>
-                  ))}
-                </ul>
-                <span>
-                  Total: R$
-                  {' '}
-                  {total.toFixed(2)}
-                </span>
-                <a
-                  href={ linkWhatsApp }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Finalizar pedido
-                </a>
-              </>
+                    </button>
+
+                    <span>
+                      R$
+                      {' '}
+                      { (item.price * quantidades[index]).toFixed(2) }
+                    </span>
+
+                    <button
+                      className="excluir"
+                      onClick={ () => {
+                        removerItem(index);
+                      } }
+                    >
+                      Excluir
+                    </button>
+
+                  </li>
+                ))}
+              </ul>
             )
         }
       </main>
+
+      <div className="form-container">
+
+        <form className="form-endereco">
+          <label htmlFor="nome">Nome</label>
+          {' '}
+          <input type="text" />
+
+          <label htmlFor="endereco">Rua</label>
+          <input type="text" />
+
+          <label htmlFor="numero">Número</label>
+          <input type="text" />
+
+          <label htmlFor="bairro">Bairro</label>
+          <select name="" id="">
+            <option value="canada">canada</option>
+          </select>
+        </form>
+      </div>
+
+      <footer className="footer-end">
+        <span className="container-data">
+          Total: R$
+          {' '}
+          {total.toFixed(2)}
+        </span>
+        <a
+          href={ linkWhatsApp }
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-finalizar"
+        >
+          Finalizar pedido
+        </a>
+      </footer>
     </section>
   );
 }

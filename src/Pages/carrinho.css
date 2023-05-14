@@ -1,4 +1,4 @@
-Estilo do componente Carrinho
+/* Carrinho */
 section {
   display: flex;
   flex-direction: column;
@@ -24,6 +24,7 @@ ul {
   padding: 0;
   margin: 0;
   width: 100%;
+  overflow-x: hidden; /* esconder barra de rolagem horizontal */
 }
 
 li {
@@ -34,6 +35,7 @@ li {
   border: 1px solid #ccc;
   margin-bottom: 10px;
   width: 100%;
+  box-sizing: border-box; /* incluir borda e padding na largura */
 }
 
 li div {
@@ -91,3 +93,115 @@ button[type="button"]:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+/* ENDERECO */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin: 20px;
+}
+
+.form-endereco {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px #ccc;
+  font-size: 16px;
+}
+
+
+/* footer dos preco */
+
+.footer-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+.container-data {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-finalizar {
+  padding: 10px;
+  background-color: #2ecc71;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+  margin-top: 30px;
+  }
+  
+  main {
+  margin-top: 10px;
+  }
+  
+  h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  }
+  
+  li {
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+  padding: 0;
+  margin-bottom: 20px;
+  }
+  
+  li div {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  }
+  
+  li span {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  }
+  
+  li button {
+  margin-top: 10px;
+  }
+  
+  .form-container {
+  margin-top: 10px;
+  }
+  
+  .footer-end {
+  flex-direction: column;
+  align-items: flex-start;
+  }
+  
+  .container-data {
+  margin-bottom: 10px;
+  }
+  
+  .btn-finalizar {
+  margin-top: 10px;
+  }
+  }

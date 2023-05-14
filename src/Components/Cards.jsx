@@ -39,11 +39,9 @@ function Cards({ products }) {
             {
               Array.isArray(product.sabores) && (
                 <select
-                  name=""
-                  id=""
                   onChange={ (event) => setSaborSelecionado(event.target.value) }
-                  defaultValue={ product.sabores[0] }
                 >
+                  <option value="">Selecione um sabor</option>
                   {product.sabores.map((sabor, index) => (
                     <option key={ index } value={ sabor }>
                       {sabor}
