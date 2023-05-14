@@ -9,8 +9,15 @@ function Carrinho() {
   const { carrinho: { items }, setCarrinho } = useContext(CarrinhoContext);
   const [quantidades, setQuantidades] = useState(items.map(() => 1));
   const [total, setTotal] = useState(0);
-  const [bairroSelecionado, setBairroSelecionado] = useState(null);
+
+  const [bairroSelecionado, setBairroSelecionado] = useState('');
   const [valorEntrega, setValorEntrega] = useState(0);
+
+  const [nome, setNome] = useState('');
+  const [rua, setRua] = useState('');
+  const [numero, setNumero] = useState('');
+
+  const [isEntrega, setIsEntrega] = useState(false);
 
   function handleBairroChange(event) {
     const bairroId = event.target.value;
@@ -32,16 +39,24 @@ function Carrinho() {
     items.forEach((item, index) => {
       newTotal += item.price * quantidades[index];
     });
-    setTotal(newTotal);
-  }, [items, quantidades]);
+    setTotal(newTotal + valorEntrega);
+  }, [items, quantidades, valorEntrega]);
 
   const numeroWhatsApp = '+5512974108554';
   let mensagem = 'Olá, gostaria de fazer um pedido com os seguintes itens:\n\n';
   items.forEach((item, index) => {
     mensagem += `${item.name}${item.sabor ? ` - (${item.sabor})` : ''}
-    - ${quantidades[index]} unidade(s) - R$ ${item.price * quantidades[index]}\n`;
+  - ${quantidades[index]} unidade(s)
+    R$ ${(item.price * quantidades[index]).toFixed(2)}\n `;
   });
-  mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
+
+  if (isEntrega) {
+    mensagem += `\nCliente: ${nome} \n${rua}, ${numero} - ${bairroSelecionado.nome}`;
+    mensagem += `\nFrete: R$ ${valorEntrega.toFixed(2)}`;
+    mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
+  } else {
+    mensagem += `\nCliente: ${nome} \nRetirar no local \nTotal: R$ ${total.toFixed(2)}`;
+  }
 
   const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
 
@@ -126,39 +141,93 @@ function Carrinho() {
         }
       </main>
 
-      <div className="form-container">
+      <div>
+        <div className="entrega">
+          <div>
+            <input
+              type="checkbox"
+              name="local"
+              id="local"
+              onChange={ () => setIsEntrega(false) }
+            />
+            <label htmlFor="local">Retirar no local</label>
+          </div>
 
-        <form className="form-endereco">
+          <div>
+            <input
+              type="checkbox"
+              name="entrega"
+              id="entrega"
+              onChange={ () => setIsEntrega(true) }
+            />
+            <label htmlFor="entrega">Endereco da entrega</label>
+          </div>
+
           <label htmlFor="nome">Nome</label>
-          {' '}
-          <input type="text" />
+          <input
+            type="text"
+            value={ nome }
+            name="nome"
+            onChange={ (e) => setNome(e.target.value) }
+          />
+        </div>
 
-          <label htmlFor="endereco">Rua</label>
-          <input type="text" />
+        {isEntrega && (
+          <div className="form-container">
+            <form className="form-endereco">
+              <label htmlFor="rua">Rua</label>
+              <input
+                type="text"
+                name="rua"
+                value={ rua }
+                onChange={ (e) => setRua(e.target.value) }
+              />
 
-          <label htmlFor="numero">Número</label>
-          <input type="text" />
+              <label htmlFor="numero">Número</label>
+              <input
+                type="text"
+                name="numero"
+                value={ numero }
+                onChange={ (e) => setNumero(e.target.value) }
+              />
 
-          <label htmlFor="bairro">Bairro</label>
-          <select name="bairro" id="bairro" onChange={ handleBairroChange }>
-            {frete.map((bairro) => (
-              <option key={ bairro.id } value={ bairro.id }>
-                {bairro.nome}
-                {' '}
-                - R$
-                {bairro.preco.toFixed(2)}
-              </option>
-            ))}
-          </select>
-        </form>
+              <label htmlFor="bairro">Bairro</label>
+              <select
+                name="bairro"
+                id="bairro"
+                onChange={ handleBairroChange }
+              >
+                {frete.map((bairro) => (
+                  <option key={ bairro.id } value={ bairro.id }>
+                    {bairro.nome}
+                    {' '}
+                    - R$
+                    {bairro.preco.toFixed(2)}
+                  </option>
+                ))}
+              </select>
+            </form>
+          </div>
+        )}
       </div>
 
       <footer className="footer-end">
-        <span className="container-data">
-          Total: R$
+        <span className="font">
+          Pedido R$
           {' '}
-          {total.toFixed(2)}
+          {(total.toFixed(2) - valorEntrega).toFixed(2)}
         </span>
+        <span className="font">
+          Frete R$
+          {' '}
+          {valorEntrega.toFixed(2)}
+        </span>
+
+        <p>
+          Total R$
+          {' '}
+          { (total).toFixed(2) }
+        </p>
         <a
           href={ linkWhatsApp }
           target="_blank"

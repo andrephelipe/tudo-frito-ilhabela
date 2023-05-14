@@ -57,7 +57,7 @@ function Cards({ products }) {
               {' '}
               R$
               {' '}
-              { product.price}
+              { (product.price).toFixed(2) }
             </span>
             <button
               type="button"
