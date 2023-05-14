@@ -68,13 +68,12 @@ function Carrinho() {
         </p>
       </Link>
 
-      <main>
-        <h2 className="h2-carrinho">CARRINHO</h2>
-        {
-          items.length === 0
-            ? <p>Não ha nenhum produto no carrinho</p>
-            : (
-
+      <h2 className="h2-carrinho">CARRINHO</h2>
+      {
+        items.length === 0
+          ? <p>Não ha nenhum produto no carrinho</p>
+          : (
+            <>
               <ul className="lista-produtos">
                 {items.map((item, index) => (
                   <li className="itens" key={ index }>
@@ -137,106 +136,112 @@ function Carrinho() {
                   </li>
                 ))}
               </ul>
-            )
-        }
-      </main>
 
-      <div>
-        <div className="entrega">
-          <div>
-            <input
-              type="checkbox"
-              name="local"
-              id="local"
-              onChange={ () => setIsEntrega(false) }
-            />
-            <label htmlFor="local">Retirar no local</label>
-          </div>
+              <div>
+                <div className="entrega">
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="local"
+                      id="local"
+                      onChange={ () => setIsEntrega(false) }
+                    />
+                    <label htmlFor="local">Retirar no local</label>
+                  </div>
 
-          <div>
-            <input
-              type="checkbox"
-              name="entrega"
-              id="entrega"
-              onChange={ () => setIsEntrega(true) }
-            />
-            <label htmlFor="entrega">Endereco da entrega</label>
-          </div>
+                  <div>
+                    <input
+                      type="checkbox"
+                      name="entrega"
+                      id="entrega"
+                      onChange={ () => setIsEntrega(true) }
+                    />
+                    <label htmlFor="entrega">Endereco da entrega</label>
+                  </div>
 
-          <label htmlFor="nome">Nome</label>
-          <input
-            type="text"
-            value={ nome }
-            name="nome"
-            onChange={ (e) => setNome(e.target.value) }
-          />
-        </div>
+                  <label htmlFor="nome">Nome</label>
+                  <input
+                    type="text"
+                    value={ nome }
+                    name="nome"
+                    onChange={ (e) => setNome(e.target.value) }
+                  />
+                </div>
 
-        {isEntrega && (
-          <div className="form-container">
-            <form className="form-endereco">
-              <label htmlFor="rua">Rua</label>
-              <input
-                type="text"
-                name="rua"
-                value={ rua }
-                onChange={ (e) => setRua(e.target.value) }
-              />
+                {isEntrega && (
+                  <div className="form-container">
+                    <form className="form-endereco">
+                      <label htmlFor="rua">Rua</label>
+                      <input
+                        type="text"
+                        name="rua"
+                        value={ rua }
+                        onChange={ (e) => setRua(e.target.value) }
+                      />
 
-              <label htmlFor="numero">Número</label>
-              <input
-                type="text"
-                name="numero"
-                value={ numero }
-                onChange={ (e) => setNumero(e.target.value) }
-              />
+                      <label htmlFor="numero">Número</label>
+                      <input
+                        type="text"
+                        name="numero"
+                        value={ numero }
+                        onChange={ (e) => setNumero(e.target.value) }
+                      />
 
-              <label htmlFor="bairro">Bairro</label>
-              <select
-                name="bairro"
-                id="bairro"
-                onChange={ handleBairroChange }
-              >
-                {frete.map((bairro) => (
-                  <option key={ bairro.id } value={ bairro.id }>
-                    {bairro.nome}
-                    {' '}
-                    - R$
-                    {bairro.preco.toFixed(2)}
-                  </option>
-                ))}
-              </select>
-            </form>
-          </div>
-        )}
-      </div>
+                      <label htmlFor="bairro">Bairro</label>
+                      <select
+                        name="bairro"
+                        id="bairro"
+                        onChange={ handleBairroChange }
+                      >
+                        {frete.map((bairro) => (
+                          <option key={ bairro.id } value={ bairro.id }>
+                            {bairro.nome}
+                            {' '}
+                            - R$
+                            {bairro.preco.toFixed(2)}
+                          </option>
+                        ))}
+                      </select>
+                    </form>
+                  </div>
+                )}
+              </div>
 
-      <footer className="footer-end">
-        <span className="font">
-          Pedido R$
-          {' '}
-          {(total.toFixed(2) - valorEntrega).toFixed(2)}
-        </span>
-        <span className="font">
-          Frete R$
-          {' '}
-          {valorEntrega.toFixed(2)}
-        </span>
+              <footer className="footer-end">
+                <span className="font">
+                  Pedido R$
+                  {' '}
+                  {(total.toFixed(2) - valorEntrega).toFixed(2)}
+                </span>
+                <span className="font">
+                  Frete R$
+                  {' '}
+                  {valorEntrega.toFixed(2)}
+                </span>
 
-        <p>
-          Total R$
-          {' '}
-          { (total).toFixed(2) }
-        </p>
-        <a
-          href={ linkWhatsApp }
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-finalizar"
-        >
-          Finalizar pedido
-        </a>
-      </footer>
+                <p>
+                  Total R$
+                  {' '}
+                  { (total).toFixed(2) }
+                </p>
+                { nome ? (
+                  <a
+                    href={ linkWhatsApp }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-finalizar"
+                  >
+                    Finalizar pedido
+                  </a>
+                ) : (
+                  <small disabled>
+                    Insira seu nome e o estilo de  entrega para finalizar o pedido
+                  </small>
+                )}
+              </footer>
+            </>
+          )
+      }
     </section>
   );
 }
