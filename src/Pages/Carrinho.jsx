@@ -3,11 +3,23 @@ import { useContext, useEffect, useState } from 'react';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import CarrinhoContext from '../Context/CarrinhoContext';
 import './carrinho.css';
+import frete from '../Data/Frete';
 
 function Carrinho() {
   const { carrinho: { items }, setCarrinho } = useContext(CarrinhoContext);
   const [quantidades, setQuantidades] = useState(items.map(() => 1));
   const [total, setTotal] = useState(0);
+  const [bairroSelecionado, setBairroSelecionado] = useState(null);
+  const [valorEntrega, setValorEntrega] = useState(0);
+
+  function handleBairroChange(event) {
+    const bairroId = event.target.value;
+    const bairro = frete.find((b) => b.id === Number(bairroId));
+    if (bairro) {
+      setBairroSelecionado(bairro);
+      setValorEntrega(bairro.preco);
+    }
+  }
 
   function removerItem(index) {
     const newItems = [...items];
@@ -33,10 +45,6 @@ function Carrinho() {
 
   const linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
 
-  const finalizarPedido = () => {
-    console.log('oi');
-  };
-
   return (
     <section>
       <Link to="/">
@@ -46,16 +54,16 @@ function Carrinho() {
       </Link>
 
       <main>
-        <h2>CARRINHO</h2>
+        <h2 className="h2-carrinho">CARRINHO</h2>
         {
           items.length === 0
-            ? <p>Nao ha nenhum produto no carrinho</p>
+            ? <p>Não ha nenhum produto no carrinho</p>
             : (
 
-              <ul>
+              <ul className="lista-produtos">
                 {items.map((item, index) => (
-                  <li key={ index }>
-                    <div>
+                  <li className="itens" key={ index }>
+                    <div className="container-sabor">
                       {item.name}
                       {item.sabor && (
                         <span>
@@ -67,13 +75,9 @@ function Carrinho() {
                           )
                         </span>)}
                     </div>
-                    <span>
-                      R$
-                      {' '}
-                      {item.price}
-                    </span>
 
                     <button
+                      className="btn-menos"
                       onClick={ () => {
                         const newQuantidades = [...quantidades];
                         if (newQuantidades[index] > 0) {
@@ -86,9 +90,10 @@ function Carrinho() {
 
                     </button>
 
-                    <p>{quantidades[index]}</p>
+                    <p className="qtd">{quantidades[index]}</p>
 
                     <button
+                      className="btn-mais"
                       onClick={ () => {
                         const newQuantidades = [...quantidades];
                         newQuantidades[index]++;
@@ -99,7 +104,7 @@ function Carrinho() {
 
                     </button>
 
-                    <span>
+                    <span className="price-all">
                       R$
                       {' '}
                       { (item.price * quantidades[index]).toFixed(2) }
@@ -135,8 +140,15 @@ function Carrinho() {
           <input type="text" />
 
           <label htmlFor="bairro">Bairro</label>
-          <select name="" id="">
-            <option value="canada">canada</option>
+          <select name="bairro" id="bairro" onChange={ handleBairroChange }>
+            {frete.map((bairro) => (
+              <option key={ bairro.id } value={ bairro.id }>
+                {bairro.nome}
+                {' '}
+                - R$
+                {bairro.preco.toFixed(2)}
+              </option>
+            ))}
           </select>
         </form>
       </div>
