@@ -4,11 +4,17 @@ import CarrinhoContext from './CarrinhoContext';
 
 function CarrinhoProvider({ children }) {
   const [carrinho, setCarrinho] = useState({ items: [] });
+  const [pagamento, setPagamento] = useState('');
+  const [troco, setTroco] = useState();
 
   const values = useMemo(() => ({
     carrinho,
     setCarrinho,
-  }), [carrinho]);
+    pagamento,
+    setPagamento,
+    troco,
+    setTroco,
+  }), [carrinho, pagamento, troco]);
 
   return (
     <CarrinhoContext.Provider value={ values }>

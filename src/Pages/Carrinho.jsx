@@ -1,12 +1,18 @@
+/* eslint-disable max-lines */
 import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import CarrinhoContext from '../Context/CarrinhoContext';
 import './carrinho.css';
+import Pagamento from '../Components/Pagamento';
 import frete from '../Data/Frete';
 
 function Carrinho() {
-  const { carrinho: { items }, setCarrinho } = useContext(CarrinhoContext);
+  const { carrinho: { items },
+    setCarrinho,
+    pagamento,
+    troco,
+  } = useContext(CarrinhoContext);
   const [quantidades, setQuantidades] = useState(items.map(() => 1));
   const [total, setTotal] = useState(0);
 
@@ -52,8 +58,11 @@ function Carrinho() {
 
   if (isEntrega) {
     mensagem += `\nCliente: ${nome} \n${rua}, ${numero} - ${bairroSelecionado.nome}`;
+    mensagem += `\npagamento: ${pagamento}\n`;
+    mensagem += troco ? `\ntroco para R$ ${(Number(troco)).toFixed(2)}\n` : '';
     mensagem += `\nFrete: R$ ${valorEntrega.toFixed(2)}`;
     mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
+    mensagem += pagamento === 'pix' ? '\n*MANDE O COMPROVANTE VIA WHATSAPP*' : '';
   } else {
     mensagem += `\nCliente: ${nome} \nRetirar no local \nTotal: R$ ${total.toFixed(2)}`;
   }
@@ -144,6 +153,7 @@ function Carrinho() {
                       type="checkbox"
                       name="local"
                       id="local"
+                      checked={ !isEntrega }
                       onChange={ () => setIsEntrega(false) }
                     />
                     <label htmlFor="local">Retirar no local</label>
@@ -154,6 +164,7 @@ function Carrinho() {
                       type="checkbox"
                       name="entrega"
                       id="entrega"
+                      checked={ isEntrega }
                       onChange={ () => setIsEntrega(true) }
                     />
                     <label htmlFor="entrega">Endereco da entrega</label>
@@ -169,44 +180,47 @@ function Carrinho() {
                 </div>
 
                 {isEntrega && (
-                  <div className="form-container">
-                    <form className="form-endereco">
-                      <label htmlFor="rua">Rua</label>
-                      <input
-                        type="text"
-                        name="rua"
-                        value={ rua }
-                        onChange={ (e) => setRua(e.target.value) }
-                      />
+                  <>
+                    <div className="form-container">
+                      <form className="form-endereco">
+                        <label htmlFor="rua">Rua</label>
+                        <input
+                          type="text"
+                          name="rua"
+                          value={ rua }
+                          onChange={ (e) => setRua(e.target.value) }
+                        />
 
-                      <label htmlFor="numero">Número</label>
-                      <input
-                        type="text"
-                        name="numero"
-                        value={ numero }
-                        onChange={ (e) => setNumero(e.target.value) }
-                      />
+                        <label htmlFor="numero">Número</label>
+                        <input
+                          type="text"
+                          name="numero"
+                          value={ numero }
+                          onChange={ (e) => setNumero(e.target.value) }
+                        />
 
-                      <label htmlFor="bairro">Bairro</label>
-                      <select
-                        name="bairro"
-                        id="bairro"
-                        onChange={ handleBairroChange }
-                      >
-                        {frete.map((bairro) => (
-                          <option key={ bairro.id } value={ bairro.id }>
-                            {bairro.nome}
-                            {' '}
-                            - R$
-                            {bairro.preco.toFixed(2)}
-                          </option>
-                        ))}
-                      </select>
-                    </form>
-                  </div>
+                        <label htmlFor="bairro">Bairro</label>
+                        <select
+                          name="bairro"
+                          id="bairro"
+                          onChange={ handleBairroChange }
+                        >
+                          {frete.map((bairro) => (
+                            <option key={ bairro.id } value={ bairro.id }>
+                              {bairro.nome}
+                              {' '}
+                              - R$
+                              {bairro.preco.toFixed(2)}
+                            </option>
+                          ))}
+                        </select>
+                      </form>
+                    </div>
+                    <Pagamento />
+
+                  </>
                 )}
               </div>
-
               <footer className="footer-end">
                 <span className="font">
                   Pedido R$
