@@ -1,0 +1,106 @@
+.cards-container-combos {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-x: hidden;
+  align-items: center;
+  position: relative;
+}
+
+.back-button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.no-style-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  /* Outros estilos que você deseja remover */
+}
+
+
+.cards-container-combos a {
+  text-decoration: none;
+  color: black;
+}
+
+.cards-container-combos p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card-promo-pr {
+  width: 250px;
+  height: 450px;
+  background-color: #fff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-promo-pr img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-promo-pr h1,
+.card-promo-pr h2 {
+  font-size: 20px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.card-promo-pr small {
+  font-size: 16px;
+  color: #666;
+}
+
+.card-promo-pr span {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.old-price-pr {
+  text-decoration: line-through;
+  color: red;
+}
+
+.card-promo-pr button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-promo-pr button:hover {
+  background-color: #ff3333;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards-container-combos {
+    justify-content: center;
+  }
+
+  .card-promo-pr {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}

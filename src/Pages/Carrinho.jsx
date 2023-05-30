@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import CarrinhoContext from '../Context/CarrinhoContext';
@@ -8,6 +8,8 @@ import Pagamento from '../Components/Pagamento';
 import frete from '../Data/Frete';
 
 function Carrinho() {
+  const history = useHistory();
+
   const { carrinho: { items },
     setCarrinho,
     pagamento,
@@ -32,6 +34,10 @@ function Carrinho() {
       setBairroSelecionado(bairro);
       setValorEntrega(bairro.preco);
     }
+  }
+
+  function handleGoBack() {
+    history.goBack();
   }
 
   function removerItem(index) {
@@ -71,11 +77,11 @@ function Carrinho() {
 
   return (
     <section>
-      <Link to="/">
+      <button className="no-style-button" onClick={ handleGoBack }>
         <p>
           <HiArrowNarrowLeft size={ 30 } color="black" />
         </p>
-      </Link>
+      </button>
 
       <h2 className="h2-carrinho">CARRINHO</h2>
       {

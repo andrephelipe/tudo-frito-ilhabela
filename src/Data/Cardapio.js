@@ -42,6 +42,15 @@ const cardapio = [
     sabores: ['queijo', 'frango', 'curirim'],
     price: 50.00,
   },
+  {
+    id: 6,
+    name: 'Picles',
+    nCardapio: 900,
+    image: 'https://www.receiteria.com.br/wp-content/uploads/receitas-de-picles.jpg',
+    description: 'colhido da roca do vo ze',
+    sabores: ['queijo', 'frango', 'curirim'],
+    price: 50.00,
+  },
 ];
 
 export default cardapio;
