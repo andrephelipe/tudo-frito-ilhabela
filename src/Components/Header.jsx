@@ -10,6 +10,9 @@ function Header() {
   const NUM = -1;
   return (
     <section className="container_header">
+      <div className="container-logo">
+        <img className="logo" src={ logo } alt="" />
+      </div>
       <div className="cart-button">
         <Link to="/carrinho">
           <BsFillCartCheckFill size={ 35 } color="black" />
@@ -17,9 +20,6 @@ function Header() {
             <span className="cart-count">{items.length}</span>
           )}
         </Link>
-      </div>
-      <div className="container-logo">
-        <img className="logo" src={ logo } alt="" />
       </div>
       <header />
     </section>

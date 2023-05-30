@@ -10,6 +10,9 @@ import Promocao from '../Components/Promocao';
 import cardapio from '../Data/Cardapio';
 import quarta from '../Data/PromocaoQuarta';
 
+// CSS
+import './Home.css';
+
 function Home() {
   return (
     <section>

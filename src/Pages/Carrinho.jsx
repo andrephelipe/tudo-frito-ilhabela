@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import CarrinhoContext from '../Context/CarrinhoContext';
-import './carrinho.css';
+// import './carrinho.css';
 import Pagamento from '../Components/Pagamento';
 import frete from '../Data/Frete';
 

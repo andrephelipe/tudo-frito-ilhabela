@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import CarrinhoContext from '../Context/CarrinhoContext';
-import './promo.css';
+import './Style/promo.css';
 
 function Promocao({ products }) {
   const { carrinho, setCarrinho } = useContext(CarrinhoContext);

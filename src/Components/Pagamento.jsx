@@ -103,7 +103,7 @@ function Pagamento() {
           <input
             id="troco"
             name="troco"
-            type="text"
+            type="number"
             value={ troco }
             onChange={ handleTrocoChange }
           />
