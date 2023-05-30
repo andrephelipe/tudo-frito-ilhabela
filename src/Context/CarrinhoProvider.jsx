@@ -5,7 +5,7 @@ import CarrinhoContext from './CarrinhoContext';
 function CarrinhoProvider({ children }) {
   const [carrinho, setCarrinho] = useState({ items: [] });
   const [pagamento, setPagamento] = useState('');
-  const [troco, setTroco] = useState();
+  const [troco, setTroco] = useState(0);
 
   const values = useMemo(() => ({
     carrinho,

@@ -1,210 +1,147 @@
-/* Carrinho */
-section {
+.container-carrinho-checkout {
+  margin: 0 auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.h2-carrinho {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 20px;
-  color: black;
-}
-
-/*  PRODUTOS */
-.lista-produtos {
-  list-style: none;
+.no-style-button {
+  background: none;
+  border: none;
   padding: 0;
   margin: 0;
-  }
-  
-  .itens {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  box-sizing: border-box; /* incluir borda e padding na largura */
-  }
-  
-  .container-sabor {
-  font-size: 1.2rem;
-  font-weight: bold;
-  }
-  
-  .price {
-  font-size: 1.2rem;
-  margin-right: 10px;
-  }
-  
-  .btn-menos,
-  .btn-mais {
-  background-color: #ccc;
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-  padding: 5px 10px;
-  border-radius: 5px;
   cursor: pointer;
-  margin-left: 10px;
-  margin-right: 10px;
-  }
-  
-  .btn-menos:hover,
-  .btn-mais:hover {
-  background-color: #999;
-  }
-  
-  .qtd {
-  margin: 0 10px;
-  font-size: 1.2rem;
-  }
-  
-  .price-all {
-  font-size: 1.2rem;
-  margin-left: 10px;
-  margin-right: 10px;
-  }
-  
-  .excluir {
-  background-color: #ff3333;
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  }
-  
-  .excluir:hover {
-  background-color: #ff0000;
-  }
-/* ENDERECO */
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  margin: 20px;
 }
 
-.form-endereco {
+.h2-carrinho-checkout {
+  color: #333;
+  text-align: center;
+}
+
+.sem-produto-no-carrinho {
+  color: #333;
+  font-weight: bold;
+}
+
+.lista-produtos-do-carrinho {
+  list-style: none;
+  padding: 0;
+}
+
+.itens {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.container-sabor-carrinho-checkout {
+  flex-grow: 1;
+  color: #333;
+}
+
+.btn-menos-car,
+.btn-mais-car,
+.excluir-carrinho {
+  background-color: #ff4d4d;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.qtd {
+  margin: 0 10px;
+  color: #333;
+}
+
+.price-all-car {
+  margin-left: 10px;
+  color: #333;
+}
+
+.entrega-infos-carrinho {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
-  border-radius: 10px;
 }
 
-label {
-  margin-bottom: 5px;
+.retirar-no-local,
+.entrega-via-motoboy {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-input,
-select {
+.input-name-carrinho-checkout {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.form-container-carrinho-checkout {
+  background-color: #fff;
   padding: 10px;
-  margin-bottom: 15px;
   border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 5px #ccc;
-  font-size: 16px;
+  margin-bottom: 20px;
+  width: 60%;
 }
 
-.entrega {
+.form-endereco-carrinho-checkout label {
+  color: #333;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-endereco-carrinho-checkout input,
+.form-endereco-carrinho-checkout select {
+  width: 13rem;
+  padding: 5px;
+  margin-top: 5px;
+  color: #333;
+}
+
+.footer-end-carrinho-checkout {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  /* height: 100vh; */
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
 }
 
-/* footer dos preco */
-
-.footer-end {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f2f2f2;
-  padding: 20px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.font {
-  margin-right: 20px;
-  margin: 1px;
+.footer-end-carrinho-checkout span,
+.footer-end-carrinho-checkout p {
+  margin-bottom: 10px;
 }
 
 .btn-finalizar {
-  padding: 10px;
-  background-color: #2ecc71;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff4d4d;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 16px
 }
 
-@media only screen and (max-width: 768px) {
-  section {
-  margin-top: 30px;
-  }
-  
-  main {
-  margin-top: 10px;
-  }
-  
-  h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  }
-  
-  li {
+.btn-finalizar:hover {
+  background-color: #ff3333;
+}
+
+.entrega-container-checkout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  align-items: flex-start;
-  border: none;
-  padding: 0;
-  margin-bottom: 20px;
-  }
-  
-  li div {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-  }
-  
-  li span {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  }
-  
-  li button {
-  margin-top: 10px;
-  }
-  
-  .form-container {
-  margin-top: 10px;
-  }
-  
-  .footer-end {
+  width: 100%;
+}
+
+.tudo-container-do-carrinho-checkout {
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  }
-  
-  .container-data {
-  margin-bottom: 10px;
-  }
-  
-  .btn-finalizar {
-  margin-top: 10px;
-  }
+  align-items: center;
 }

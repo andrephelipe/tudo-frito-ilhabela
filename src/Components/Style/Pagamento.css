@@ -1,0 +1,86 @@
+.container-pagamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container-pagamento h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.opcao-pagamento {
+  margin-bottom: 10px;
+}
+
+.opcao-pagamento input[type="radio"] {
+  margin-right: 5px;
+}
+
+.opcao-pagamento label {
+  font-size: 14px;
+}
+
+.opcao-pagamento-dinheiro {
+  margin-top: 10px;
+}
+
+.opcao-pagamento-dinheiro label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.opcao-pagamento-dinheiro input[type="number"] {
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.opcao-pagamento button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.opcao-pagamento button:hover {
+  background-color: #ff3333;
+}
+
+.opcao-pagamento span {
+  color: #4caf50;
+  font-size: 12px;
+}
+
+.opcao-pagamento small {
+  margin-bottom: 5px;
+}
+
+.btn-copiar-carrinho {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-copiar-carrinho button {
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-copiar-carrinho button:hover {
+  background-color: #ff3333;
+}
+
+.btn-copiar-carrinho span {
+  color: #4caf50;
+  font-size: 12px;
+}

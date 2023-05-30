@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react';
 import CarrinhoContext from '../Context/CarrinhoContext';
 
+import './Style/Pagamento.css';
+
 function Pagamento() {
   const { pagamento,
     setPagamento,
@@ -30,10 +32,10 @@ function Pagamento() {
   };
 
   return (
-    <div>
+    <div className="container-pagamento">
       <h2>Forma de pagamento</h2>
 
-      <div>
+      <div className="opcao-pagamento">
         <input
           id="pix"
           name="pix"
@@ -45,7 +47,7 @@ function Pagamento() {
         <label htmlFor="pix">PIX</label>
       </div>
 
-      <div>
+      <div className="opcao-pagamento">
         <input
           id="cartao de credito"
           name="cartao de credito"
@@ -57,7 +59,7 @@ function Pagamento() {
         <label htmlFor="cartao de credito">Cartão de Crédito</label>
       </div>
 
-      <div>
+      <div className="opcao-pagamento">
         <input
           id="cartao de debito"
           name="cartao de debito"
@@ -69,7 +71,7 @@ function Pagamento() {
         <label htmlFor="cartao de debito">Cartão de Débito</label>
       </div>
 
-      <div>
+      <div className="opcao-pagamento">
         <input
           id="dinheiro"
           name="dinheiro"
@@ -81,24 +83,28 @@ function Pagamento() {
         <label htmlFor="dinheiro">Dinheiro</label>
       </div>
 
-      <div>
+      <div className="opcao-pagamento">
         {pagamento === 'pix' && (
           <div>
             <small>{textToCopy}</small>
-            {!isCopied ? (
-              <button onClick={ copyToClipboard }>Copiar</button>
-            ) : (
-              <>
-                <br />
-                <span>Copiado!</span>
-              </>
-            )}
+            <div className="btn-copiar-carrinho">
+              {!isCopied ? (
+                <button onClick={ copyToClipboard }>
+                  Copiar
+                </button>
+              ) : (
+                <>
+                  <br />
+                  <span>Copiado!</span>
+                </>
+              )}
+            </div>
           </div>
         )}
       </div>
 
       {pagamento === 'dinheiro' && (
-        <div>
+        <div className="opcao-pagamento-dinheiro">
           <label htmlFor="troco">Troco para:</label>
           <input
             id="troco"
