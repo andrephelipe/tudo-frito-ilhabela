@@ -1,20 +1,13 @@
 import { useState, useContext } from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import { HiArrowNarrowLeft } from 'react-icons/hi';
-import { BsFillCartCheckFill } from 'react-icons/bs';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CarrinhoContext from '../Context/CarrinhoContext';
 import './Style/Cards.css';
 
 // eslint-disable-next-line react/prop-types
 function Cards({ products }) {
-  const history = useHistory();
-  const { carrinho: { items }, setCarrinho, carrinho } = useContext(CarrinhoContext);
-  const NUM = -1;
+  const { setCarrinho, carrinho } = useContext(CarrinhoContext);
   const [saborSelecionado, setSaborSelecionado] = useState('');
-
-  const handleGoBack = () => {
-    history.goBack();
-  };
 
   const handleButtonAddCart = (param) => {
     let sabor = '';
@@ -35,24 +28,16 @@ function Cards({ products }) {
         }],
       });
     }
+
+    toast.success('Item adicionado ao carrinho!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000, // Tempo em milissegundos para fechar automaticamente (aqui é 2 segundos)
+    });
   };
 
   return (
     <div>
-      <div className="back-button">
-        <button className="no-style-button" onClick={ handleGoBack }>
-          <p>
-            <HiArrowNarrowLeft size={ 30 } color="black" />
-          </p>
-        </button>
-
-        <Link className="cart-button" to="/carrinho">
-          <BsFillCartCheckFill size={ 35 } color="black" />
-          {items.length > NUM && (
-            <span className="cart-count">{items.length}</span>
-          )}
-        </Link>
-      </div>
+      <ToastContainer />
 
       <div className="cards-container">
         {

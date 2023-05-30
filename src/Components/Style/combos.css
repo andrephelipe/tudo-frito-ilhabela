@@ -8,21 +8,6 @@
   position: relative;
 }
 
-.back-button {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.no-style-button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  /* Outros estilos que você deseja remover */
-}
-
 .cards-container-combos a {
   text-decoration: none;
   color: black;

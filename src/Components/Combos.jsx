@@ -1,46 +1,34 @@
 import { useContext } from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import { HiArrowNarrowLeft } from 'react-icons/hi';
-import { BsFillCartCheckFill } from 'react-icons/bs';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CarrinhoContext from '../Context/CarrinhoContext';
 import './Style/combos.css';
 
 // eslint-disable-next-line react/prop-types
 function Promocao({ products }) {
-  const history = useHistory();
-  const { carrinho: { items }, setCarrinho, carrinho } = useContext(CarrinhoContext);
-  const NUM = -1;
+  const { setCarrinho, carrinho } = useContext(CarrinhoContext);
 
   const handleButtonAddCart = (param) => {
-    setCarrinho({
-      ...carrinho,
-      items: [...carrinho.items, {
-        name: param.name,
-        price: param.newPrice,
-      }],
-    });
-  };
+    const alreadyInCart = carrinho.items.some((item) => item.name === param.name);
+    if (!alreadyInCart) {
+      setCarrinho({
+        ...carrinho,
+        items: [...carrinho.items, {
+          name: param.name,
+          price: param.newPrice,
+        }],
+      });
+    }
 
-  const handleGoBack = () => {
-    history.goBack();
+    toast.success('Item adicionado ao carrinho!', {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 2000, // Tempo em milissegundos para fechar automaticamente (aqui é 2 segundos)
+    });
   };
 
   return (
     <div>
-      <div className="back-button">
-        <button className="no-style-button" onClick={ handleGoBack }>
-          <p>
-            <HiArrowNarrowLeft size={ 30 } color="black" />
-          </p>
-        </button>
-
-        <Link className="cart-button" to="/carrinho">
-          <BsFillCartCheckFill size={ 35 } color="black" />
-          {items.length > NUM && (
-            <span className="cart-count">{items.length}</span>
-          )}
-        </Link>
-      </div>
+      <ToastContainer />
 
       <section className="cards-container-combos">
         {
