@@ -2,12 +2,11 @@ import { Link } from 'react-router-dom';
 
 // Componets
 import Header from '../Components/Header';
-import Cards from '../Components/Cards';
-// import Promocao from '../Components/Promocao';
+import CardHome from '../Components/CardHome';
 
 // Data
-import cardapio from '../Data/Cardapio';
-// import quarta from '../Data/PromocaoQuarta';
+// import cardapio from '../Data/Cardapio';
+import porcoes from '../Data/porcoes';
 
 // CSS
 import './Home.css';
@@ -33,9 +32,18 @@ function Home() {
             </button>
           </Link>
         </div>
+
+        <div className="button-container">
+          <Link to="/molhos">
+            <button className="button-options">
+              Molhos
+            </button>
+          </Link>
+        </div>
       </div>
 
-      <Cards products={ cardapio } />
+      <h1 className="porcoes-home">PORÇÕES</h1>
+      <CardHome products={ porcoes } />
     </section>
 
   );

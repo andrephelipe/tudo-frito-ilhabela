@@ -23,7 +23,6 @@
   /* Outros estilos que você deseja remover */
 }
 
-
 .cards-container-combos a {
   text-decoration: none;
   color: black;
@@ -39,7 +38,7 @@
 
 .card-promo-pr {
   width: 250px;
-  height: 450px;
+  height: 600px;
   background-color: #fff;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -71,7 +70,6 @@
 
 .card-promo-pr span {
   font-size: 16px;
-  color: #666;
   margin-bottom: 8px;
 }
 

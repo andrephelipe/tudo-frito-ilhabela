@@ -66,7 +66,7 @@ function Carrinho() {
   const numeroWhatsApp = '+5512974108554';
   let mensagem = 'Olá, gostaria de fazer um pedido com os seguintes itens:\n\n';
   items.forEach((item, index) => {
-    mensagem += `${item.name}${item.sabor ? ` - (${item.sabor})` : ''}
+    mensagem += `${item.name}${item.tamanho ? ` - (${item.tamanho})` : ''}
   - ${quantidades[index]} unidade(s)
     R$ ${(item.price * quantidades[index]).toFixed(2)}\n `;
   });
@@ -106,13 +106,13 @@ function Carrinho() {
                     <li className="itens" key={ index }>
                       <div className="container-sabor-carrinho-checkout">
                         {item.name}
-                        {item.sabor && (
+                        {item.tamanho && (
                           <span>
                             {' '}
                             -
                             {' '}
                             (
-                            {item.sabor}
+                            {item.tamanho}
                             )
                           </span>)}
                       </div>
@@ -201,53 +201,55 @@ function Carrinho() {
 
                 <section className="entrega-container-checkout">
                   {isEntrega && (
-                    <div className="form-container-carrinho-checkout">
-                      <form className="form-endereco-carrinho-checkout">
-                        <label htmlFor="telefone">Telefone</label>
-                        <input
-                          type="number"
-                          name="telefone"
-                          value={ telefone }
-                          onChange={ (e) => setTelefone(e.target.value) }
-                        />
+                    <>
+                      <div className="form-container-carrinho-checkout">
+                        <form className="form-endereco-carrinho-checkout">
+                          <label htmlFor="telefone">Telefone</label>
+                          <input
+                            type="number"
+                            name="telefone"
+                            value={ telefone }
+                            onChange={ (e) => setTelefone(e.target.value) }
+                          />
 
-                        <label htmlFor="rua">Rua</label>
-                        <input
-                          type="text"
-                          name="rua"
-                          value={ rua }
-                          onChange={ (e) => setRua(e.target.value) }
-                        />
+                          <label htmlFor="rua">Rua</label>
+                          <input
+                            type="text"
+                            name="rua"
+                            value={ rua }
+                            onChange={ (e) => setRua(e.target.value) }
+                          />
 
-                        <label htmlFor="numero">Número</label>
-                        <input
-                          type="text"
-                          name="numero"
-                          value={ numero }
-                          onChange={ (e) => setNumero(e.target.value) }
-                        />
+                          <label htmlFor="numero">Número</label>
+                          <input
+                            type="text"
+                            name="numero"
+                            value={ numero }
+                            onChange={ (e) => setNumero(e.target.value) }
+                          />
 
-                        <label htmlFor="bairro">Bairro</label>
-                        <select
-                          name="bairro"
-                          id="bairro"
-                          onChange={ handleBairroChange }
-                        >
-                          {frete.map((bairro) => (
-                            <option key={ bairro.id } value={ bairro.id }>
-                              {bairro.nome}
-                              {' '}
-                              - R$
-                              {bairro.preco.toFixed(2)}
-                            </option>
-                          ))}
-                        </select>
-                      </form>
-                    </div>
+                          <label htmlFor="bairro">Bairro</label>
+                          <select
+                            name="bairro"
+                            id="bairro"
+                            onChange={ handleBairroChange }
+                          >
+                            {frete.map((bairro) => (
+                              <option key={ bairro.id } value={ bairro.id }>
+                                {bairro.nome}
+                                {' '}
+                                - R$
+                                {bairro.preco.toFixed(2)}
+                              </option>
+                            ))}
+                          </select>
+                        </form>
+                      </div>
+                      <Pagamento />
+
+                    </>
                   )}
                 </section>
-
-                <Pagamento />
 
                 <footer className="footer-end-carrinho-checkout">
                   <span className="font-carrinho-checkout">

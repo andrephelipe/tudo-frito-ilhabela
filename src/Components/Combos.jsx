@@ -48,21 +48,25 @@ function Promocao({ products }) {
           products.map((product) => (
             <div key={ product.id } className="card-promo-pr">
               <h1>{ product.title }</h1>
+              <br />
               <img src={ product.image } alt={ product.name } />
               <h2>{ product.name }</h2>
               <small>
                 { product.description }
               </small>
+              <br />
+              <small>
+                { product.subDescription }
+              </small>
+              <br />
               <span className="old-price-pr">
                 De:
-                {' '}
                 R$
                 {' '}
                 { product.oldPrice}
               </span>
               <span>
                 Para:
-                {' '}
                 R$
                 {' '}
                 { product.newPrice}
