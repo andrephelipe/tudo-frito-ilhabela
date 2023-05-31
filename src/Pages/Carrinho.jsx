@@ -33,6 +33,7 @@ function Carrinho() {
   const [rua, setRua] = useState('');
   const [numero, setNumero] = useState('');
   const [telefone, setTelefone] = useState('');
+  const [referencia, setReferencia] = useState('');
 
   const [isEntrega, setIsEntrega] = useState(false);
 
@@ -73,6 +74,7 @@ function Carrinho() {
 
   if (isEntrega) {
     mensagem += `\nCliente: ${nome} \n${rua}, ${numero} - ${bairroSelecionado.nome}`;
+    mensagem += `\nPonto de referencia: ${referencia}`;
     mensagem += `\ntel: ${telefone}`;
     mensagem += `\npagamento: ${pagamento}\n`;
     mensagem += troco ? `\ntroco para R$ ${(Number(troco)).toFixed(2)}\n` : '';
@@ -227,6 +229,14 @@ function Carrinho() {
                             name="numero"
                             value={ numero }
                             onChange={ (e) => setNumero(e.target.value) }
+                          />
+
+                          <label htmlFor="referencia">Ponto de Referencia</label>
+                          <input
+                            type="text"
+                            name="referencia"
+                            value={ referencia }
+                            onChange={ (e) => setReferencia(e.target.value) }
                           />
 
                           <label htmlFor="bairro">Bairro</label>
