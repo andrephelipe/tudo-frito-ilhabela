@@ -42,10 +42,12 @@ function Home() {
         </div>
       </div>
 
-      <h1 className="porcoes-home">PORÇÕES</h1>
+      <div className="name-class-product">
+        <h1 className="porcoes-home">PORÇÕES</h1>
+      </div>
+
       <CardHome products={ porcoes } />
     </section>
-
   );
 }
 

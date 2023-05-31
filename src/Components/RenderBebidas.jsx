@@ -44,7 +44,36 @@ function RenderBebidas() {
           </Link>
         </div>
       </div>
-      <h1 className="porcoes-home">BEBIDAS</h1>
+
+      <div className="name-class-product">
+        <div className="buttons-container">
+          <div className="button-container">
+            <Link to="/combos">
+              <button className="button-options">
+                Combos
+              </button>
+            </Link>
+          </div>
+
+          <div className="button-container">
+            <Link to="/molhos">
+              <button className="button-options">
+                Molhos
+              </button>
+            </Link>
+          </div>
+
+          <div className="button-container">
+            <Link to="/">
+              <button className="button-options">
+                Porções
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        <h1 className="porcoes-home">BEBIDAS</h1>
+      </div>
       <Cards products={ bebidas } />
     </section>
   );

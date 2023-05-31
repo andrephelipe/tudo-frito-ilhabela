@@ -44,7 +44,35 @@ function RenderCombo() {
           </Link>
         </div>
       </div>
-      <h1 className="porcoes-home">COMBOS</h1>
+      <div className="name-class-product">
+        <div className="buttons-container">
+          <div className="button-container">
+            <Link to="/molhos">
+              <button className="button-options">
+                Molhos
+              </button>
+            </Link>
+          </div>
+
+          <div className="button-container">
+            <Link to="/bebidas">
+              <button className="button-options">
+                Bebidas
+              </button>
+            </Link>
+          </div>
+
+          <div className="button-container">
+            <Link to="/">
+              <button className="button-options">
+                Porções
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        <h1 className="porcoes-home">COMBOS</h1>
+      </div>
       <Combos products={ combos } />
     </section>
   );
