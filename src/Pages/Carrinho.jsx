@@ -81,7 +81,7 @@ function Carrinho() {
     mensagem += `\nPedido: R$ ${total.toFixed(2) - valorEntrega.toFixed(2)}`;
     mensagem += `\nFrete: R$ ${valorEntrega.toFixed(2)}`;
     mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
-    mensagem += pagamento === 'pix' ? '\n*MANDE O COMPROVANTE VIA WHATSAPP*' : '';
+    mensagem += pagamento === 'pix' ? '\n*ENVIE O COMPROVANTE VIA WHATSAPP*' : '';
   } else {
     mensagem += `\nCliente: ${nome} \nRetirar no local \nTotal: R$ ${total.toFixed(2)}`;
   }
