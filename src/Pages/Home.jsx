@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // Componets
 import Header from '../Components/Header';
 import CardHome from '../Components/CardHome';
+import HorarioFuncionamento from '../Components/Funcionamento';
 
 // Data
 // import cardapio from '../Data/Cardapio';
@@ -15,6 +16,7 @@ function Home() {
   return (
     <section>
       <Header />
+      <HorarioFuncionamento />
 
       <div className="buttons-container">
         <div className="button-container">

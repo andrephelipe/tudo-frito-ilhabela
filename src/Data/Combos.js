@@ -7,7 +7,7 @@ import solo from '../../Assets/solo.jpg';
 const combos = [
   {
     id: 1,
-    title: 'Combo 4 pessoas',
+    // title: 'Combo 4 pessoas',
     name: 'Combo Eu e a galera + refrigerante 2l',
     description: '300g tirinhas de peito de frango - 200g de batata frita - 200g de cebola onion - 200g de coxinha',
     subDescription: 'Acompanha 3 molhos: Maionese temperada 30ml, molho Barbecue 30ml e molho Rose 30ml + refrigerante 2l',
@@ -17,7 +17,7 @@ const combos = [
   },
   {
     id: 2,
-    title: 'Combo duo',
+    // title: 'Combo duo',
     name: 'Combo Nós dois',
     description: '150g tirinhas de peito de frango - 100g de batata frita - 100g de cebola onion - 100g de coxinha',
     subDescription: 'Acompanha 2 molhos: Maionese temperada 30ml, molho Barbecue 30ml',
@@ -27,7 +27,7 @@ const combos = [
   },
   {
     id: 3,
-    title: 'Combo individual',
+    // title: 'Combo individual',
     name: 'Combo Tô sozinho',
     description: '100g tirinhas de peito de frango - 50g de batata frita - 50g de cebola onion - 50g de coxinha',
     subDescription: 'Acompanha 2 molhos: Maionese temperada 30ml, molho Barbecue 30ml',

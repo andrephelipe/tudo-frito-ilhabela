@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useContext, useState } from 'react';
 import CarrinhoContext from '../Context/CarrinhoContext';
 
@@ -87,7 +88,7 @@ function Pagamento() {
         {pagamento === 'pix' && (
           <div>
             <div className="mensagem-pixie">
-              <p>PAGAMENTOS VIA PIX SÓ SERÃO VALIDADOS APÓS O COMPROVANTE.</p>
+              <p>PAGAMENTOS VIA PIX SÓ SERÃO VALIDADOS APÓS O ENVIO DO COMPROVANTE VIA WHATSAPP.</p>
               <em className="pixie">{textToCopy}</em>
             </div>
             <div className="btn-copiar-carrinho">

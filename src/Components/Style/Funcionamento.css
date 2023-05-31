@@ -1,0 +1,26 @@
+.funcionamento-estabelecimento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dias-funcionamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-funcionamento{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aberto {
+  color: green;
+}
+
+.fechado {
+  color: red;
+}
+
