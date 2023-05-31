@@ -76,6 +76,7 @@ function Carrinho() {
     mensagem += `\ntel: ${telefone}`;
     mensagem += `\npagamento: ${pagamento}\n`;
     mensagem += troco ? `\ntroco para R$ ${(Number(troco)).toFixed(2)}\n` : '';
+    mensagem += `\nPedido: R$ ${total.toFixed(2) - valorEntrega.toFixed(2)}`;
     mensagem += `\nFrete: R$ ${valorEntrega.toFixed(2)}`;
     mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
     mensagem += pagamento === 'pix' ? '\n*MANDE O COMPROVANTE VIA WHATSAPP*' : '';
@@ -255,7 +256,7 @@ function Carrinho() {
                   <span className="font-carrinho-checkout">
                     Pedido R$
                     {' '}
-                    {(total.toFixed(2) - valorEntrega).toFixed(2)}
+                    {(total.toFixed(2) - valorEntrega.toFixed(2)).toFixed(2)}
                   </span>
                   <span className="font-carrinho-checkout">
                     Frete R$
