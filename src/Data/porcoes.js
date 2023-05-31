@@ -1,5 +1,14 @@
 import batataFrita from '../../Assets/batata-frita.jpg';
 import batataEmpanada from '../../Assets/batata-empanada.jpg';
+import tulipas from '../../Assets/tulipas.jpg';
+import coxaAsa from '../../Assets/coxaAsa.jpg';
+import batataNoisette from '../../Assets/batataNoisette.jpg';
+import mandioca from '../../Assets/mandioca.jpg';
+import cebolaOnion from '../../Assets/cebolaOnion.jpg';
+import dadinhoTapioca from '../../Assets/dadinhoTapioca.jpg';
+import tirinhaFrango from '../../Assets/tirinhaFrango.jpg';
+import polentaFrita from '../../Assets/polentaFrita.jpg';
+import frangoAgridoce from '../../Assets/frangoAgridoce.jpg';
 
 const MOLHO1 = 'Acompanha molho rose e maionese temperada';
 const MOLHO2 = 'Acompanha molho de barbecue e maionese temperada';
@@ -20,7 +29,7 @@ const porcoes = [
   {
     id: 2,
     name: 'Porção de tulipa crocante com tempero especial da casa',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: tulipas,
     description: MOLHO1,
     tamanho: ['400g', '800g'],
     priceMedio: 39.99,
@@ -29,7 +38,7 @@ const porcoes = [
   {
     id: 3,
     name: 'Porção de coxinha da asa crocante com tempero especial da casa',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: coxaAsa,
     description: MOLHO1,
     tamanho: ['400g', '800g'],
     priceMedio: 34.99,
@@ -38,7 +47,7 @@ const porcoes = [
   {
     id: 4,
     name: 'Porção de Batata frita noisettes',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: batataNoisette,
     description: MOLHO1,
     tamanho: ['400g', '800g'],
     priceMedio: 44.99,
@@ -47,7 +56,7 @@ const porcoes = [
   {
     id: 5,
     name: 'Porção de mandioca frita',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: mandioca,
     description: MOLHO1,
     tamanho: ['400g', '800g'],
     priceMedio: 37.99,
@@ -56,7 +65,7 @@ const porcoes = [
   {
     id: 6,
     name: 'Porção de tiras de frango',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: tirinhaFrango,
     description: MOLHO2,
     tamanho: ['400g', '800g'],
     priceMedio: 39.99,
@@ -65,7 +74,7 @@ const porcoes = [
   {
     id: 7,
     name: 'Porção frango crocante',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: frangoAgridoce,
     description: 'ao molho agridoce',
     tamanho: ['400g', '800g'],
     priceMedio: 44.99,
@@ -74,7 +83,7 @@ const porcoes = [
   {
     id: 8,
     name: 'Porção de dadinho de tapioca',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: dadinhoTapioca,
     description: MOLHO3,
     tamanho: ['400g', '800g'],
     priceMedio: 44.99,
@@ -92,7 +101,7 @@ const porcoes = [
   {
     id: 10,
     name: 'Porção de polenta',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: polentaFrita,
     description: MOLHO1,
     tamanho: ['400g', '800g'],
     priceMedio: 29.99,
@@ -101,11 +110,11 @@ const porcoes = [
   {
     id: 11,
     name: 'Porção de cebola onion',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: cebolaOnion,
     description: MOLHO4,
-    tamanho: ['400g', '400g'],
-    priceMedio: 29.99,
-    priceGrande: 29.99,
+    tamanho: ['300g', '300g'],
+    priceMedio: 44.99,
+    priceGrande: 44.99,
   },
 ];
 

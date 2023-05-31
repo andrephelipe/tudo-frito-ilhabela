@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -81,7 +82,7 @@ function CardsHome({ products }) {
                   {' '}
                   R$
                   {' '}
-                  { (tamanhoSelecionado === '800g'
+                  { (tamanhoSelecionado === '800g' || '300g'
                     ? product.priceGrande : product.priceMedio).toFixed(2) }
                 </span>
                 <button
