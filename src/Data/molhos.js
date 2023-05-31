@@ -1,36 +1,42 @@
+import maionese from '../../Assets/maionese.jpg';
+import barbecue from '../../Assets/barbecue.jpeg';
+import agridoce from '../../Assets/agridoce.jpg';
+import rose from '../../Assets/rose.jpg';
+import chedar from '../../Assets/chedar.jpg';
+
 const molhos = [
   {
     id: 1,
     name: 'Maionese temperada',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: maionese,
     description: '60 ml',
     price: 5.99,
   },
   {
     id: 2,
     name: 'Molho barbecue',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: barbecue,
     description: '60 ml',
     price: 5.99,
   },
   {
     id: 3,
     name: 'Molho agridoce',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: agridoce,
     description: '60 ml',
     price: 5.99,
   },
   {
     id: 4,
     name: 'Molho rose',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    image: rose,
     description: '60 ml',
     price: 5.99,
   },
   {
     id: 5,
-    name: 'Cheddar',
-    image: 'https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express.jpg',
+    name: 'Molho cheddar',
+    image: chedar,
     description: '60 ml',
     price: 5.99,
   },
