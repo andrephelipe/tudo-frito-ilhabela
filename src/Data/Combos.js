@@ -5,7 +5,7 @@ const combos = [
   {
     id: 1,
     title: 'Combo 4 pessoas',
-    name: 'Combo Eu e a galera',
+    name: 'Combo Eu e a galera + refrigerante 2l',
     description: '300g tirinhas de peito de frango - 200g de batata noisette - 200g de cebola onion - 200g de coxinha',
     subDescription: 'Acompanha 3 molhos: Maionese temperada 30ml, molho Barbecue 30ml e molho Rose 30ml + refrigerante 2l',
     image: promoQuarta,
