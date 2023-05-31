@@ -82,7 +82,7 @@ function CardsHome({ products }) {
                   {' '}
                   R$
                   {' '}
-                  { (tamanhoSelecionado === '800g' || '300g'
+                  { (tamanhoSelecionado === '800g'
                     ? product.priceGrande : product.priceMedio).toFixed(2) }
                 </span>
                 <button
