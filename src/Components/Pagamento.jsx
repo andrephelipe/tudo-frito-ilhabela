@@ -86,7 +86,10 @@ function Pagamento() {
       <div className="opcao-pagamento">
         {pagamento === 'pix' && (
           <div>
-            <small>{textToCopy}</small>
+            <div className="mensagem-pixie">
+              <p>PAGAMENTOS VIA PIX SÓ SERÃO VALIDADOS APÓS O COMPROVANTE.</p>
+              <small className="pixie">{textToCopy}</small>
+            </div>
             <div className="btn-copiar-carrinho">
               {!isCopied ? (
                 <button onClick={ copyToClipboard }>
