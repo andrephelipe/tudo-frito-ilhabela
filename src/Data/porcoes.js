@@ -112,7 +112,7 @@ const porcoes = [
     name: 'Porção de cebola onion',
     image: cebolaOnion,
     description: MOLHO4,
-    tamanho: ['400g', '400g'],
+    tamanho: ['300g', '300g'],
     priceMedio: 44.99,
     priceGrande: 44.99,
   },
