@@ -88,7 +88,7 @@ function Pagamento() {
           <div>
             <div className="mensagem-pixie">
               <p>PAGAMENTOS VIA PIX SÓ SERÃO VALIDADOS APÓS O COMPROVANTE.</p>
-              <small className="pixie">{textToCopy}</small>
+              <em className="pixie">{textToCopy}</em>
             </div>
             <div className="btn-copiar-carrinho">
               {!isCopied ? (

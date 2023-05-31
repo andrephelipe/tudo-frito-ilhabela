@@ -78,7 +78,7 @@ function Carrinho() {
     mensagem += `\ntel: ${telefone}`;
     mensagem += `\npagamento: ${pagamento}\n`;
     mensagem += troco ? `\ntroco para R$ ${(Number(troco)).toFixed(2)}\n` : '';
-    mensagem += `\nPedido: R$ ${total.toFixed(2) - valorEntrega.toFixed(2)}`;
+    mensagem += `\nPedido: R$ ${(total.toFixed(2) - valorEntrega.toFixed(2)).toFixed(2)}`;
     mensagem += `\nFrete: R$ ${valorEntrega.toFixed(2)}`;
     mensagem += `\nTotal: R$ ${total.toFixed(2)}`;
     mensagem += pagamento === 'pix' ? '\n*ENVIE O COMPROVANTE VIA WHATSAPP*' : '';
@@ -167,6 +167,9 @@ function Carrinho() {
                   ))}
                 </ul>
 
+                <strong>TODOS OS CAMPOS COM (*) SÃO OBRIGATÓRIOS</strong>
+                <br />
+
                 <div className="entrega-infos-carrinho">
                   <form className="entrega-carrinho-checkout">
                     <div className="retirar-no-local">
@@ -191,7 +194,7 @@ function Carrinho() {
                       <label htmlFor="entrega">Endereco da entrega</label>
                     </div>
 
-                    <label htmlFor="nome">Nome</label>
+                    <label htmlFor="nome">Nome*</label>
                     <input
                       className="input-name-carrinho-checkout"
                       type="text"
@@ -207,7 +210,7 @@ function Carrinho() {
                     <>
                       <div className="form-container-carrinho-checkout">
                         <form className="form-endereco-carrinho-checkout">
-                          <label htmlFor="telefone">Telefone</label>
+                          <label htmlFor="telefone">Telefone*</label>
                           <input
                             type="number"
                             name="telefone"
@@ -215,7 +218,7 @@ function Carrinho() {
                             onChange={ (e) => setTelefone(e.target.value) }
                           />
 
-                          <label htmlFor="rua">Rua</label>
+                          <label htmlFor="rua">Rua / Avenida*</label>
                           <input
                             type="text"
                             name="rua"
@@ -223,7 +226,7 @@ function Carrinho() {
                             onChange={ (e) => setRua(e.target.value) }
                           />
 
-                          <label htmlFor="numero">Número</label>
+                          <label htmlFor="numero">Número*</label>
                           <input
                             type="text"
                             name="numero"
@@ -231,7 +234,7 @@ function Carrinho() {
                             onChange={ (e) => setNumero(e.target.value) }
                           />
 
-                          <label htmlFor="referencia">Ponto de Referencia</label>
+                          <label htmlFor="referencia">Ponto de Referencia*</label>
                           <input
                             type="text"
                             name="referencia"
@@ -239,7 +242,7 @@ function Carrinho() {
                             onChange={ (e) => setReferencia(e.target.value) }
                           />
 
-                          <label htmlFor="bairro">Bairro</label>
+                          <label htmlFor="bairro">Bairro*</label>
                           <select
                             name="bairro"
                             id="bairro"
@@ -290,7 +293,8 @@ function Carrinho() {
                       >
                         Finalizar pedido
                       </a>
-                    ) : isEntrega && nome && telefone && rua && numero && pagamento ? (
+                    // eslint-disable-next-line max-len
+                    ) : isEntrega && nome && telefone && rua && numero && pagamento && referencia ? (
                       <a
                         href={ linkWhatsApp }
                         target="_blank"
