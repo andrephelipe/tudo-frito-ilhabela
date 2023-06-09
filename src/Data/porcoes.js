@@ -8,7 +8,7 @@ import cebolaOnion from '../../Assets/cebolaOnion.jpg';
 import dadinhoTapioca from '../../Assets/dadinhoTapioca.jpg';
 import tirinhaFrango from '../../Assets/tirinhaFrango.jpg';
 import polentaFrita from '../../Assets/polentaFrita.jpg';
-import frangoAgridoce from '../../Assets/frangoAgridoce.jpg';
+// import frangoAgridoce from '../../Assets/frangoAgridoce.jpg';
 
 const MOLHO1 = 'Acompanha molho rose e maionese temperada';
 const MOLHO2 = 'Acompanha molho de barbecue e maionese temperada';
@@ -71,15 +71,15 @@ const porcoes = [
     priceMedio: 39.99,
     priceGrande: 74.99,
   },
-  {
-    id: 7,
-    name: 'Porção frango crocante',
-    image: frangoAgridoce,
-    description: 'ao molho agridoce',
-    tamanho: ['400g', '800g'],
-    priceMedio: 44.99,
-    priceGrande: 94.99,
-  },
+  // {
+  //   id: 7,
+  //   name: 'Porção frango crocante',
+  //   image: frangoAgridoce,
+  //   description: 'ao molho agridoce',
+  //   tamanho: ['400g', '800g'],
+  //   priceMedio: 44.99,
+  //   priceGrande: 94.99,
+  // },
   {
     id: 8,
     name: 'Porção de dadinho de tapioca',
