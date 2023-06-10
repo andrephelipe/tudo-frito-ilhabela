@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { DateTime } from 'luxon';
+
+// import provider
+import CarrinhoContext from '../Context/CarrinhoContext';
 
 import './Style/Funcionamento.css';
 
@@ -15,8 +18,8 @@ function HorarioFuncionamento() {
     { dia: 'Sábado', inicio: '19:00', fim: '23:00' },
   ];
 
+  const { estaAberto, setEstaAberto } = useContext(CarrinhoContext);
   const [diaAtual, setDiaAtual] = useState('');
-  const [estaAberto, setEstaAberto] = useState(false);
 
   useEffect(() => {
     const now = DateTime.local();

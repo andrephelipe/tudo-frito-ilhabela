@@ -22,6 +22,7 @@ function Carrinho() {
     setCarrinho,
     pagamento,
     troco,
+    estaAberto,
   } = useContext(CarrinhoContext);
   const [quantidades, setQuantidades] = useState(items.map(() => 1));
   const [total, setTotal] = useState(0);
@@ -54,6 +55,33 @@ function Carrinho() {
     const newItems = [...items];
     newItems.splice(index, 1);
     setCarrinho({ items: newItems });
+  }
+
+  // eslint-disable-next-line max-len, react/no-unstable-nested-components, react/no-multi-comp, react/prop-types, no-shadow
+  function FinalizarPedidoButton({ isEntrega, nome, telefone, rua, numero, pagamento, referencia, linkWhatsApp }) {
+    const shouldShowButton = (!isEntrega && nome && estaAberto)
+      // eslint-disable-next-line max-len
+      || (isEntrega && nome && telefone && rua && numero && pagamento && referencia && estaAberto);
+
+    if (shouldShowButton) {
+      return (
+        <a
+          href={ linkWhatsApp }
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-finalizar"
+        >
+          Finalizar pedido
+        </a>
+      );
+    }
+
+    return (
+      <small disabled>
+        Insira todas as informações necessárias para finalizar o pedido
+        / ou aguarde o horario de funcionamento correto!
+      </small>
+    );
   }
 
   useEffect(() => {
@@ -283,7 +311,25 @@ function Carrinho() {
                     { (total).toFixed(2) }
                   </p>
 
+                  {/* <div>
+                    <FinalizarPedidoButton />
+                  </div> */}
+
                   <div>
+                    <FinalizarPedidoButton
+                      isEntrega={ isEntrega }
+                      nome={ nome }
+                      telefone={ telefone }
+                      rua={ rua }
+                      numero={ numero }
+                      pagamento={ pagamento }
+                      referencia={ referencia }
+                      linkWhatsApp={ linkWhatsApp }
+
+                    />
+                  </div>
+
+                  {/* <div>
                     {!isEntrega && nome ? (
                       <a
                         href={ linkWhatsApp }
@@ -308,7 +354,7 @@ function Carrinho() {
                         Insira todas as informações necessárias para finalizar o pedido
                       </small>
                     )}
-                  </div>
+                  </div> */}
 
                 </footer>
               </div>

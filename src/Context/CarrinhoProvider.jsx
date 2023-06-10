@@ -6,6 +6,7 @@ function CarrinhoProvider({ children }) {
   const [carrinho, setCarrinho] = useState({ items: [] });
   const [pagamento, setPagamento] = useState('');
   const [troco, setTroco] = useState(0);
+  const [estaAberto, setEstaAberto] = useState(false);
 
   const values = useMemo(() => ({
     carrinho,
@@ -14,7 +15,9 @@ function CarrinhoProvider({ children }) {
     setPagamento,
     troco,
     setTroco,
-  }), [carrinho, pagamento, troco]);
+    estaAberto,
+    setEstaAberto,
+  }), [carrinho, estaAberto, pagamento, troco]);
 
   return (
     <CarrinhoContext.Provider value={ values }>
