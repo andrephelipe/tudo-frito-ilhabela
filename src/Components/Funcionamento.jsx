@@ -35,7 +35,7 @@ function HorarioFuncionamento() {
       setDiaAtual(diaSemanaAtual);
       setEstaAberto(now > inicio && now < fim);
     }
-  }, [horarios]);
+  }, [horarios, setEstaAberto]);
 
   return (
     <div className="funcionamento-estabelecimento">
