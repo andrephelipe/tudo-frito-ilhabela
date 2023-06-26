@@ -45,7 +45,7 @@ function HorarioFuncionamento() {
         <p>
           <strong>De Quarta-feira a Segunda-feira:</strong>
           {' '}
-          das 19:00 às 23:00
+          A partir das 19:00 horas.
         </p>
         <p className="fechado">
           <strong>Terça-feira:</strong>
@@ -56,11 +56,7 @@ function HorarioFuncionamento() {
 
       {diaAtual && (
         <div className="status-funcionamento">
-          <p>
-            <strong>Dia da Semana:</strong>
-            {' '}
-            {diaAtual}
-          </p>
+
           <p className={ estaAberto ? 'aberto' : 'fechado' }>
             <strong>Status:</strong>
             {' '}
