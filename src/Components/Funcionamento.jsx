@@ -50,7 +50,7 @@ function HorarioFuncionamento() {
         <p className="fechado">
           <strong>Terça-feira:</strong>
           {' '}
-          Fechado
+          Fechado.
         </p>
       </div>
 
@@ -60,7 +60,7 @@ function HorarioFuncionamento() {
           <p className={ estaAberto ? 'aberto' : 'fechado' }>
             <strong>Status:</strong>
             {' '}
-            {estaAberto ? 'Aberto' : 'Fechado'}
+            {estaAberto ? 'Aberto.' : 'Fechado.'}
           </p>
 
         </div>
