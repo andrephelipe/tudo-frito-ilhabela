@@ -1,11 +1,11 @@
 import batataFrita from '../../Assets/batata-frita.jpg';
-import batataEmpanada from '../../Assets/batata-empanada.jpg';
-import tulipas from '../../Assets/tulipas.jpg';
-import coxaAsa from '../../Assets/coxaAsa.jpg';
+import batataEmpanada from '../../Assets/batata-empanada.jpeg';
+import tulipas from '../../Assets/tulipas.jpeg';
+import coxaAsa from '../../Assets/coxaAsa.jpeg';
 import mandioca from '../../Assets/mandioca.jpeg';
 import cebolaOnion from '../../Assets/cebolaOnion.jpg';
-import dadinhoTapioca from '../../Assets/dadinhoTapioca.jpg';
-import tirinhaFrango from '../../Assets/tirinhaFrango.jpg';
+import dadinhoTapioca from '../../Assets/dadinhoTapioca.jpeg';
+import tirinhaFrango from '../../Assets/tirinhaFrango.jpeg';
 import polentaFrita from '../../Assets/polentaFrita.jpg';
 
 const MOLHO1 = 'Acompanha molho rose e maionese temperada';
@@ -43,7 +43,7 @@ const porcoes = [{
 },
 {
   id: 4,
-  name: 'Porção de batata frita palito',
+  name: 'Porção de batata frita Crinkle palito',
   image: batataFrita,
   description: MOLHO5,
   tamanho: ['400g', '800g'],
