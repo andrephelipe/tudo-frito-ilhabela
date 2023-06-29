@@ -55,13 +55,13 @@ function RenderBebidas() {
             </Link>
           </div>
 
-          <div className="button-container">
+          {/* <div className="button-container">
             <Link to="/molhos">
               <button className="button-options">
                 Molhos
               </button>
             </Link>
-          </div>
+          </div> */}
 
           <div className="button-container">
             <Link to="/">

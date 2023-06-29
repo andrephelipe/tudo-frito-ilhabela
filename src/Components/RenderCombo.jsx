@@ -46,13 +46,13 @@ function RenderCombo() {
       </div>
       <div className="name-class-product">
         <div className="buttons-container">
-          <div className="button-container">
+          {/* <div className="button-container">
             <Link to="/molhos">
               <button className="button-options">
                 Molhos
               </button>
             </Link>
-          </div>
+          </div> */}
 
           <div className="button-container">
             <Link to="/bebidas">

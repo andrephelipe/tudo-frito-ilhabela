@@ -4,7 +4,7 @@ import Home from './Pages/Home';
 import Carrinho from './Pages/Carrinho';
 import RenderCombo from './Components/RenderCombo';
 import RenderBebidas from './Components/RenderBebidas';
-import RenderMolhos from './Components/RenderMolhos';
+// import RenderMolhos from './Components/RenderMolhos';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/carrinho" component={ Carrinho } />
         <Route path="/combos" component={ RenderCombo } />
         <Route path="/bebidas" component={ RenderBebidas } />
-        <Route path="/molhos" component={ RenderMolhos } />
+        {/* <Route path="/molhos" component={ RenderMolhos } /> */}
       </Switch>
     </BrowserRouter>
   );
