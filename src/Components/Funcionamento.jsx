@@ -9,13 +9,13 @@ import './Style/Funcionamento.css';
 function HorarioFuncionamento() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const horarios = [
-    { dia: 'Domingo', inicio: '19:00', fim: '22:00' },
-    { dia: 'Segunda-feira', inicio: '19:00', fim: '22:00' },
+    { dia: 'Domingo', inicio: '19:00', fim: '23:59' },
+    { dia: 'Segunda-feira', inicio: '19:00', fim: '23:59' },
     { dia: 'Terça-feira', inicio: '00:00', fim: '00:00' },
-    { dia: 'Quarta-feira', inicio: '19:00', fim: '23:00' },
-    { dia: 'Quinta-feira', inicio: '19:00', fim: '23:00' },
-    { dia: 'Sexta-feira', inicio: '19:00', fim: '23:00' },
-    { dia: 'Sábado', inicio: '19:00', fim: '23:00' },
+    { dia: 'Quarta-feira', inicio: '19:00', fim: '23:59' },
+    { dia: 'Quinta-feira', inicio: '19:00', fim: '23:59' },
+    { dia: 'Sexta-feira', inicio: '19:00', fim: '23:59' },
+    { dia: 'Sábado', inicio: '19:00', fim: '23:59' },
   ];
 
   const { estaAberto, setEstaAberto } = useContext(CarrinhoContext);

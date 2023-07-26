@@ -4,10 +4,10 @@ import guaranaLata from '../../Assets/guarana-lata.png';
 import coca2l from '../../Assets/coca2l.jpg';
 import cocaZero2l from '../../Assets/cocazero2l.jpg';
 import guarana2l from '../../Assets/guarana-2l.jpg';
-import h20 from '../../Assets/h20.png';
+import h20 from '../../Assets/tradicional.jpeg';
 import agua from '../../Assets/agua.png';
-import fantalaranja from '../../Assets/fantalaranja.png';
-import fantauva from '../../Assets/fantauva.jpg';
+// import fantalaranja from '../../Assets/fantalaranja.png';
+// import fantauva from '../../Assets/fantauva.jpg';
 import h20limoneto from '../../Assets/h20limoneto.jpg';
 
 const bebidas = [
@@ -32,20 +32,20 @@ const bebidas = [
     description: '',
     price: 5.00,
   },
-  {
-    id: 4,
-    name: 'Fanta uva lata',
-    image: fantauva,
-    description: '',
-    price: 5.00,
-  },
-  {
-    id: 5,
-    name: 'Fanta laranja lata',
-    image: fantalaranja,
-    description: '',
-    price: 5.00,
-  },
+  // {
+  //   id: 4,
+  //   name: 'Fanta uva lata',
+  //   image: fantauva,
+  //   description: '',
+  //   price: 5.00,
+  // },
+  // {
+  //   id: 5,
+  //   name: 'Fanta laranja lata',
+  //   image: fantalaranja,
+  //   description: '',
+  //   price: 5.00,
+  // },
   {
     id: 6,
     name: 'Coca-Cola 2l',
